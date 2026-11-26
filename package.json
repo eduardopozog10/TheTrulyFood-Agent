@@ -1,0 +1,26 @@
+{
+  "name": "thetrulyfood-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Prototipo local de agente comercial modular para Shopify",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "dev": "npm run build:web && node --env-file-if-exists=.env --import tsx --watch src/server.ts",
+    "build:web": "tsc -p tsconfig.web.json && node scripts/copy-web.mjs",
+    "build": "tsc -p tsconfig.json && npm run build:web",
+    "start": "node --env-file-if-exists=.env dist/server.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.test.json",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run build",
+    "probe:shopify": "node --env-file-if-exists=.env --import tsx scripts/probe-shopify.ts",
+    "secrets:check": "node scripts/check-secrets.mjs",
+    "audit:deps": "npm audit --audit-level=low"
+  },
+  "dependencies": {
+    "fastify": "^5.12.8",
+    "zod": "^4.6.7"
+  }
+}
