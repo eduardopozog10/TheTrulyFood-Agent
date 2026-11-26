@@ -1,0 +1,4 @@
+{
+  "_comment": "Sin tarifas asumidas. Añadir modelo exacto con inputPerMillionUsd, outputPerMillionUsd, verifiedAt ISO y sourceUrl oficial. Vigencia máxima: 30 días. No configura el acceso a la API.",
+  "models": {}
+}

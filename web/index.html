@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#183d32">
+  <title>The Truly Food · Laboratorio comercial</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="workspace">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="The Truly Food, inicio"><span class="brand-icon">t.</span><span>the truly food<span class="brand-sub">COMMERCIAL LAB</span></span></a>
+      <div class="sidebar-label">ESPACIO DE TRABAJO</div>
+      <div class="nav-active"><span aria-hidden="true">◌</span> Simulador comercial <span class="nav-dot"></span></div>
+      <div class="phase-card"><span class="eyebrow">EN DESARROLLO</span><h2>De la conversación<br>a la compra.</h2><p>Explora la primera versión de tu asistente comercial.</p><span class="phase-tag">FASE 01 · PROTOTIPO LOCAL</span></div>
+      <div class="sidebar-bottom"><span class="local-dot"></span> Entorno local<span>Sin pagos ni WhatsApp conectado</span></div>
+    </aside>
+    <main>
+      <header class="page-header"><div><div class="breadcrumb">Laboratorio <span>/</span> Agente comercial</div><h1>Probemos una conversación<span>.</span></h1><p>Un espacio para conectar, consultar y aprender.</p></div><span class="version">PROTOTIPO v0.1</span></header>
+      <div class="content-grid">
+        <section class="chat-panel" aria-label="Conversación con el agente">
+          <div class="chat-header"><div class="assistant-identity"><span class="avatar">t.</span><div><h2>Asistente comercial</h2><span id="provider-label">Iniciando…</span></div></div><button class="button-quiet" id="reset" type="button">＋ Nueva conversación</button></div>
+          <div class="mode-banner"><span class="banner-icon" aria-hidden="true">i</span><p id="mode-notice">Conectando con el servicio local…</p></div>
+          <div class="messages" id="messages" role="log" aria-live="polite" aria-label="Mensajes de la conversación"></div>
+          <div class="processing" id="processing" role="status" hidden><span></span><span></span><span></span> Consultando información…</div>
+          <div class="error-banner" id="error" role="alert" hidden></div>
+          <div class="composer-wrap"><div class="suggestions" id="suggestions"><button type="button" data-prompt="Ver catálogo">Ver catálogo <span>↗</span></button><button type="button" data-prompt="Busco una gorra">Busco una gorra <span>↗</span></button><button type="button" data-prompt="¿Cómo son los despachos?">Consultar despacho <span>↗</span></button></div>
+          <form id="chat-form"><label class="sr-only" for="message">Tu mensaje</label><textarea id="message" maxlength="2000" rows="1" placeholder="Escribe lo que estás buscando…" required></textarea><button class="send-button" id="send" type="submit" aria-label="Enviar mensaje">↑</button></form>
+          <div class="composer-footnote"><span>Los datos comerciales se validan en el backend.</span><span id="character-count">0 / 2000</span></div></div>
+        </section>
+        <aside class="inspector" aria-label="Información de la sesión">
+          <section class="inspector-card"><div class="section-heading"><h2>Conexión</h2><span class="small-tag">SHOPIFY</span></div><label class="field-label" for="source">CATÁLOGO DE LA CONVERSACIÓN</label><select id="source"><option value="live">Gautier · catálogo real</option><option value="demo">Demostración · datos ficticios</option></select><a class="store-link" href="https://gautieroficial.cl/" target="_blank" rel="noopener noreferrer">gautieroficial.cl <span>↗</span></a><div class="connection-state" id="connection"><span class="status-dot idle"></span><span>Sin consultar</span></div><p class="small-copy">Tienda de prueba independiente de The Truly Food. Si restringe el acceso, usa la demostración.</p></section>
+          <section class="inspector-card"><div class="section-heading"><h2>Esta conversación</h2><span class="activity-icon" aria-hidden="true">⌁</span></div><div class="metrics"><div><span class="metric-label">Mensajes</span><strong id="message-count">0</strong></div><div><span class="metric-label">Herramientas</span><strong id="tool-count">0</strong></div><div><span class="metric-label">Tokens entrada</span><strong id="input-tokens">0</strong></div><div><span class="metric-label">Tokens salida</span><strong id="output-tokens">0</strong></div></div><div class="cost"><div><span class="metric-label">Costo de API estimado</span><strong id="cost">US$ 0,00</strong></div><span id="cost-label">MODO GRATUITO</span></div><p class="model-name" id="model">—</p></section>
+          <section class="inspector-card tools-card"><div class="section-heading"><h2>Actividad de herramientas</h2><span class="small-tag">EN VIVO</span></div><ol class="tool-list" id="tools"><li class="empty-tools">Las consultas aparecerán aquí cuando envíes un mensaje.</li></ol></section>
+          <p class="privacy-note">Pruebas con datos ficticios. Evita ingresar datos personales. Los registros permanecen en este computador.</p>
+        </aside>
+      </div>
+      <footer class="page-footer"><span>THE TRULY FOOD <span>·</span> TECNOLOGÍA CON PROPÓSITO</span><span>Fase 1 · Explorar antes de escalar</span></footer>
+    </main>
+  </div>
+</body>
+</html>
