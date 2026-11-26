@@ -1,0 +1,7 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Fase 1: verificar", "type": "shell", "command": "npm.cmd run check", "group": { "kind": "test", "isDefault": true }, "problemMatcher": [] },
+    { "label": "Fase 1: iniciar local", "type": "shell", "command": "npm.cmd run dev", "isBackground": true, "problemMatcher": [] }
+  ]
+}
